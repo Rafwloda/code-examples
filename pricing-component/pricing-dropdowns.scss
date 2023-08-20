@@ -1,0 +1,226 @@
+.pricing-dropdowns {
+    padding-top: 220px;
+    background-color: $green;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &--smaller-padding-top {
+        padding-top: 82px;
+    }
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+    }
+    &__background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    &__title {
+        color: $white;
+        position: relative;
+        z-index: 2;
+
+        h1, h2, h3, h4 {
+            font-size: 6.4rem;
+            line-height: 6.6rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+    }
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 2.7rem;
+        color: $white;
+        margin-bottom: 39px;
+        position: relative;
+        z-index: 2;
+    }
+    &__svg-box {
+        padding: 26px;
+        background-color: #EEEEEE;
+        transition: .3s ease;
+        svg {
+            transition: .3s ease;
+        }
+    }
+    &__dropdown-box {
+        background-color: $white;
+        margin-bottom: 5px;
+        &:hover {
+            .pricing-dropdowns__dropdown-title {
+                color: $gold;
+
+            }
+            .pricing-dropdowns__svg-box {
+                background-color: $gold;
+            }
+        }
+        &--active {
+            .pricing-dropdowns__text-wrapper {
+                padding: 30px;
+                max-height: 1500px;
+                transition: 0.5s ease-in;
+            }
+            .pricing-dropdowns__time-range, .pricing-dropdowns__price-range {
+                opacity: 0;
+            }
+            .pricing-dropdowns__svg-box {
+                background-color: $white;
+                svg {
+                    transform: rotate(180deg);
+
+                }
+            }
+        }
+    }
+    &__shortcuts {
+        transition: .3s ease;
+    }
+    &__dropdown-title-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 30px;
+        cursor: pointer;
+
+    }
+    &__dropdown-title {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.7rem;
+        color: $green;
+        transition: .3s ease;
+        margin-right: 20px;
+    }
+    &__shortcuts {
+        display: flex;
+        align-items: center;
+    }
+    &__text-wrapper {
+        display: flex;
+        justify-content: space-between;
+        max-height: 0;
+        transition: 0.5s ease-out;
+        overflow: hidden;
+        width: 100%;
+        padding: 0 30px;
+        @include breakpoint-max('s-tablet') {
+            flex-direction: column;
+        }
+    }
+    &__text-box {
+        max-width: 898px;
+        margin-right: 30px;
+        @include breakpoint-max('s-tablet') {
+            margin-right: 0;
+        }
+        table {
+            td {
+            }
+        }
+    }
+    &__drop-text {
+        margin-bottom: 23px;
+        p {
+            color: $green;
+            font-weight: 300;
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            margin-bottom: 15px;
+        }
+        strong {
+            font-weight: 600;
+        }
+        a {
+            color: $green;
+            font-weight: 400;
+            transition: .3s ease;
+            &:hover {
+                color: $gold;
+            }
+        }
+        ul, ol {
+            margin-bottom: 15px;
+            li {
+                color: $green;
+                font-weight: 300;
+                font-size: 1.8rem;
+                line-height: 2.7rem;
+                margin-bottom: 5px;
+                margin-left: 19px;
+                strong {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    &__time-range, &__price-range {
+        display: flex;
+        align-items: center;
+        margin-right: 46px;
+        transition: .3s ease;
+        @include breakpoint-max('s-tablet') {
+            display: none;
+        }
+        svg {
+            margin-right: 16px;
+        }
+    }
+    &__button-box {
+        display: flex;
+        align-items: flex-end;
+        @include breakpoint-max('s-tablet') {
+            margin-top: 30px;
+        }
+    }
+    &__content-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    &__button {
+        @include rect-button;
+        span:nth-child(1) {
+            background-color: $gold !important;
+            border-color: $gold;
+        }
+        span:nth-child(2) {
+            border-color: $green !important;
+            background-color: $green !important;
+            color: $white !important;
+        }
+    }
+    &__row {
+        display: flex;
+        &:last-child {
+            div {
+                border-bottom: none;
+            }
+        }
+    }
+    &__col {
+        width: 160px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $gray;
+        padding: 11px 0;
+        span {
+            color: $green;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 2rem;
+            &>span {
+                font-size: 1.2rem;
+                color: $gray;
+            }
+        }
+        svg {
+            margin-right: 16px;
+        }
+    }
+}
